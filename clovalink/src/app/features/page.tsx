@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
-import Features from '@/components/Features';
-import CTA from '@/components/CTA';
+import Features from '../../components/Features';
+import CTA from '../../components/CTA';
 import Footer from '../../components/Footer';
 
 export default function FeaturesPage() {

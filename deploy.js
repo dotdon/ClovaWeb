@@ -6,7 +6,7 @@ const { execSync } = require('child_process');
 console.log('Starting deploy script...');
 
 // Define paths
-const sourceDir = path.join(__dirname, 'clovalink', '.next', 'out');
+const sourceDir = path.join(__dirname, 'clovalink', 'out');
 const targetDir = path.join(__dirname, 'out');
 
 // Create output directory if it doesn't exist
@@ -18,10 +18,18 @@ if (!fs.existsSync(targetDir)) {
 // Check if source directory exists
 if (!fs.existsSync(sourceDir)) {
   console.error(`Source directory not found: ${sourceDir}`);
+  console.log('Checking for alternative build output locations...');
   
-  // Create a fallback index.html if the build failed
-  console.log('Creating fallback index.html...');
-  const fallbackHtml = `
+  const altSourceDir = path.join(__dirname, 'clovalink', '.next', 'out');
+  if (fs.existsSync(altSourceDir)) {
+    console.log(`Found alternative build output at: ${altSourceDir}`);
+    console.log(`Copying files from ${altSourceDir} to ${targetDir}`);
+    fs.copySync(altSourceDir, targetDir);
+    console.log('Files copied successfully!');
+  } else {
+    // Create a fallback index.html if the build failed
+    console.log('Creating fallback index.html...');
+    const fallbackHtml = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +87,8 @@ if (!fs.existsSync(sourceDir)) {
 </body>
 </html>
   `;
-  fs.writeFileSync(path.join(targetDir, 'index.html'), fallbackHtml);
+    fs.writeFileSync(path.join(targetDir, 'index.html'), fallbackHtml);
+  }
   
   // Create a _redirects file for Cloudflare Pages
   console.log('Creating _redirects file...');

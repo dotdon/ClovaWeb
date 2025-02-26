@@ -20,6 +20,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+
+  // Explicitly set the output directory
+  distDir: 'out',
 };
 
 export default nextConfig; 
