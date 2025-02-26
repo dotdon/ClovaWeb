@@ -1,10 +1,11 @@
 # Wrangler configuration for Cloudflare Pages
 [build]
-command = "cd clovalink && npm install && npm run build"
-output_dir = "clovalink/out"
+command = "cd clovalink && npm install && npm run build && node ../deploy.js"
+output_dir = "out"
 
+# This is the key configuration for Cloudflare Pages
 [site]
-bucket = "clovalink/out"
+bucket = "out"
 
 [build.environment]
 NODE_VERSION = "18.18.0" 

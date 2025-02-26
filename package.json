@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd clovalink && npm install && npm run build"
+    "build": "cd clovalink && npm install && npm run build && node ../deploy.js"
   },
   "engines": {
     "node": ">=18.18.0"
