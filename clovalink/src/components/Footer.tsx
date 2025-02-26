@@ -70,7 +70,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="https://github.com/dotdon/cloverlink" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/dotdon/clovalink" className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" target="_blank" rel="noopener noreferrer">
                   GitHub Wiki
                 </a>
               </li>

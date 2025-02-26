@@ -15,7 +15,7 @@ export default function CTA() {
             </Link>
           </div>
           <div className="ml-3 inline-flex rounded-md shadow">
-            <a href="https://github.com/dotdon/cloverlink" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/dotdon/clovalink" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
           </div>
